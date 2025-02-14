@@ -166,7 +166,7 @@ static void triggers_send(void)
 #endif /* CONFIG_APP_ENVIRONMENTAL */
 
 	/* Send FOTA poll trigger */
-	enum fota_msg_type fota_msg = FOTA_POLL;
+	enum fota_msg_type fota_msg = FOTA_POLL_REQUEST;
 
 	err = zbus_chan_pub(&FOTA_CHAN, &fota_msg, K_SECONDS(1));
 	if (err) {
